@@ -121,7 +121,7 @@ def patch(URL, msg):
 
 
 def get(URL):
-    response = requests.get(URL)
+    response = requests.get(firebaseURL(URL))
     if response.status_code != 200:
         raise FirebaseException(response.text)
     return json.loads(response.text)
